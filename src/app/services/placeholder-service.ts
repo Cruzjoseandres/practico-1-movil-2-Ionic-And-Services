@@ -24,7 +24,7 @@ export class PlaceholderService {
     return this._http.get<T[]>(`${this.baseUrl}/products/category/${category}`);
   }
 
-  getProductById<T>(id: String): Observable<T> {
+  getProductById<T>(id: string): Observable<T> {
     return this._http.get<T>(`${this.baseUrl}/products/${id}`);
   }
 }

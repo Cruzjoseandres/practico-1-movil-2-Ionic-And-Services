@@ -1,4 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/products/:category"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Producto: {{product?.title}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
-<ion-content>
-  
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngIf="product">
+    <ion-card-header>
+      <ion-card-title>Titulo: {{product.title}}</ion-card-title>
+        <ion-card-subtitle>Precio: {{product.price}}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-img [src]="product.image" alt="{{product.title}}" style="width: 100px; height: auto;"></ion-img>
+
+      <ion-item>
+      <ion-label>ID: {{product.id}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Descripción: {{product.description}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Categoria: {{product.category}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Valoración: {{product.rating?.rate}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Total de valoraciones: {{product.rating?.count}}</ion-label>
+    </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+

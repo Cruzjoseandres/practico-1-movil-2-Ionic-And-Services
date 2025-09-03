@@ -4,21 +4,25 @@
       <ion-back-button defaultHref="/categories"></ion-back-button>
     </ion-buttons>
     <ion-title>
-      Categoria 
+      Categoria: {{products[0]?.category}} 
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let product of products">
-      <ion-thumbnail slot="start">
-        <img [src]="product.image" alt="{{product.title}}">
-      </ion-thumbnail>
+    <ion-item *ngFor="let product of products" (click)="detail(product.id)">
       <ion-label>
-        <h2>{{ product.title }}</h2>
-        <p>{{ product.category }}</p>
-        <h3>${{ product.price }}</h3>
+        Id: {{product.id}} 
+      </ion-label>
+      <ion-label>
+        Titulo: {{product.title}}
+      </ion-label>
+      <ion-label>
+        Categoria: {{product.category}}
+      </ion-label>
+      <ion-label>
+        Precio: ${{product.price}}
       </ion-label>
     </ion-item>
   </ion-list>
